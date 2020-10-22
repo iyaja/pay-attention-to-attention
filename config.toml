@@ -1,0 +1,17 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Pay Attention to Attention!"
+
+theme = "reveal-hugo"
+
+[params.reveal_hugo]
+theme = "night"
+
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
