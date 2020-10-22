@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.76.4" />
+    <meta charset="utf-8">
+<title>Pay Attention to Attention</title>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/reveal-js/css/reset.css">
+<link rel="stylesheet" href="/reveal-js/css/reveal.css"><link rel="stylesheet" href="/reveal-js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="/highlight-js/default.min.css">
+    
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+  
+
+    <section><h1 id="pay-attention-to-attention">Pay Attention to Attention!</h1>
+</section><section>
+<section>
+<h2 id="what-_is_-an-attention-mechanism-">What <em>is</em> an Attention Mechanism? 🤔</h2>
+</section><section>
+<h3 id="information-routing">Information Routing</h3>
+</section><section>
+<h3 id="global-features">Global Features</h3>
+</section><section>
+<h3 id="interpretability">Interpretability</h3>
+</section><section>
+<p><img src="showandtell.png" alt="source"></p>
+</section><section>
+<p><img src="https://miro.medium.com/max/1236/1*_cWv-in-l9VBx0BQf-PsCA.jpeg" alt="source"></p>
+</section><section>
+<h3 id="multi-head-self-attention">Multi-Head Self-Attention</h3>
+</section><section>
+<p><img src="https://jalammar.github.io/images/gpt2/self-attention-example-folders-3.png" alt="source"></p>
+</section><section>
+<p><img src="https://jalammar.github.io/images/gpt2/self-attention-example-folders-scores-3.png" alt="source"></p>
+</section>
+</section><section>
+<section>
+<h2 id="self-attention-vs-attention">Self-Attention vs. Attention</h2>
+</section><section>
+<p>Attention: input $\rightarrow$ output</p>
+</section><section>
+<p>Self-attention: input $\leftrightarrow$ input</p>
+</section><section>
+<p>In transformers, self-attention is applied <em>inside</em> in the encoder</p>
+</section><section>
+<p>Attention is used <em>between</em> the encoder and decoder</p>
+</section><section>
+<p>For each output, attention computes $n$ weights</p>
+</section><section>
+<p>For $n$ inputs, self-attention uses $n^2$ attention weights</p>
+</section>
+</section><section>
+<section>
+<h2 id="what-about-compute-">What About Compute? 🖥</h2>
+</section><section>
+<p>Self-attention is not exactly easy to run&hellip;</p>
+</section><section>
+<p>$ (1920 \times 1080)^2 = 4299816960000 $</p>
+</section><section>
+<h1 id="-">= 🤯</h1>
+</section><section>
+<p>GPT-3 has 175 BILLION parameters</p>
+</section><section>
+<p>&hellip; and requires 22 GPUs &hellip;</p>
+</section><section>
+<p>&hellip; to run inference!</p>
+</section>
+</section><section>
+<section>
+<h2 id="solutions-">Solutions 🧪</h2>
+</section><section>
+<h3 id="reformerhttpsarxivorgabs200104451pdf"><a href="https://arxiv.org/abs/2001.04451.pdf">Reformer</a></h3>
+<p><img src="https://1.bp.blogspot.com/-27SvVUMvl3I/Xh-9qWcjyDI/AAAAAAAAFNQ/tlaQwWkJUSAxacT47COYlb7s_8eaLerdACLcBGAsYHQ/s640/image3.png" alt="source"></p>
+</section><section>
+<h3 id="longformerhttpsarxivorgabs200405150"><a href="https://arxiv.org/abs/2004.05150">Longformer</a></h3>
+<p><img src="https://paperswithcode.com/media/methods/Screen_Shot_2020-05-31_at_7.04.33_PM.png" alt="source"></p>
+</section><section>
+<h3 id="-and-many-more">&hellip; And Many More</h3>
+<p><a href="https://arxiv.org/abs/2007.14062">BigBird</a>, <a href="https://arxiv.org/abs/2006.04768">Linformer</a>, <a href="https://openreview.net/forum?id=xTJEN-ggl1b">Lambda Networks</a>, etc.</p>
+</section>
+</section><section>
+<section>
+<h2 id="triplet-attention">Triplet Attention</h2>
+</section><section>
+<p>Goal: efficient attention mechanism for vision models</p>
+</section><section>
+<p><img src="rotate.png" alt="rotate to attend"></p>
+</section><section>
+<p><img src="https://raw.githubusercontent.com/LandskapeAI/triplet-attention/master/figures/triplet.png" alt="figure"></p>
+</section><section>
+<h3 id="z-pool">Z-Pool</h3>
+<p>$$ (C, H, W) \rightarrow (2, H, W) $$</p>
+</section><section>
+<p>Composed of convolution and pooling</p>
+</section><section>
+<h3 id="results">Results</h3>
+<p><img src="results.png" alt="Results"></p>
+</section><section>
+<h3 id="gradcam">GradCAM</h3>
+<p><img src="https://raw.githubusercontent.com/LandskapeAI/triplet-attention/master/figures/grad1.jpg" height=500vh></img></p>
+</section><section>
+<h3 id="resources">Resources</h3>
+<p><a href="https://landskapeai.github.io/publication/triplet/">Website</a><br>
+<a href="https://arxiv.org/abs/2010.03045">Paper</a><br>
+<a href="https://github.com/LandskapeAI/triplet-attention">Code</a></p>
+</section>
+</section><section>
+<h3 id="for-more-attention--nlp">For More Attention &amp; NLP</h3>
+<p><img src="nlpbook.png" height=500vh></img></p>
+</section><section>
+<h2 id="questions">Questions❓</h2>
+</section><section>
+<p>Big thanks to Mr. Ganesan Narayanasamy, Dr. Sameer Shende, and the OpenPOWER foundation for providing the compute infrastructure neccesary to run our experiments.</p>
+<h1 id="heading">👏</h1>
+</section><section>
+<h2 id="thank-you-for-joining">Thank You For Joining!</h2>
+</section><section>
+<h2 id="image-credits">Image Credits</h2>
+<p><a href="https://jalammar.github.io">jalammar.github.io</a></p>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=/reveal-hugo/object-assign.js></script>
+
+<a href="/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">{"theme":"night"}</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="/reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+  Reveal.initialize(options);
+</script>
+
+
+  
+  
+  <script type="text/javascript" src="/reveal-js/plugin/markdown/marked.js"></script>
+  
+  <script type="text/javascript" src="/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="/reveal-js/plugin/zoom-js/zoom.js"></script>
+  
+  
+  <script type="text/javascript" src="/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+    <script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+    
+  </body>
+</html>
