@@ -1,6 +1,7 @@
-baseURL = "http://example.org/"
+baseURL = "http://iyaja.github.io/pay-attention-to-attention/"
 languageCode = "en-us"
 title = "Pay Attention to Attention!"
+publishDir = "docs"
 
 theme = "reveal-hugo"
 
